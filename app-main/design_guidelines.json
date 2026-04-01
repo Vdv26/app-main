@@ -1,0 +1,118 @@
+{
+  "theme": "dark",
+  "archetype": "Archetype 4 (Swiss & High-Contrast) adapted for dark mode",
+  "emotional_tone": ["Authority", "Clarity", "Precision", "Professional"],
+  "typography": {
+    "fonts": [
+      {
+        "family": "'Cabinet Grotesk', sans-serif",
+        "usage": "headings",
+        "weights": ["400", "700", "900"],
+        "css_import": "@import url('https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,700,900&display=swap');"
+      },
+      {
+        "family": "'IBM Plex Sans', sans-serif",
+        "usage": "body",
+        "weights": ["400", "500", "600"],
+        "css_import": "@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap');"
+      }
+    ],
+    "scales": {
+      "h1": "text-4xl sm:text-5xl tracking-tighter leading-none font-bold font-['Cabinet_Grotesk']",
+      "h2": "text-2xl sm:text-3xl tracking-tight leading-none font-bold font-['Cabinet_Grotesk']",
+      "h3": "text-xl sm:text-2xl tracking-tight leading-snug font-semibold font-['Cabinet_Grotesk']",
+      "h4": "text-lg sm:text-xl tracking-tight leading-snug font-medium font-['Cabinet_Grotesk']",
+      "body": "text-base leading-relaxed font-['IBM_Plex_Sans']",
+      "small": "text-sm font-['IBM_Plex_Sans']",
+      "label": "text-xs uppercase tracking-[0.2em] font-['IBM_Plex_Sans']"
+    }
+  },
+  "colors": {
+    "background": {
+      "base": "#0A0A0A",
+      "surface": "#121212",
+      "surface_hover": "#1A1A1A"
+    },
+    "text": {
+      "primary": "#FFFFFF",
+      "secondary": "#A1A1AA",
+      "muted": "#52525B"
+    },
+    "brand": {
+      "primary": "#FFFFFF",
+      "accent": "#007AFF"
+    },
+    "semantic": {
+      "success": "#10B981",
+      "danger": "#EF4444",
+      "warning": "#F59E0B"
+    },
+    "borders": {
+      "default": "#27272A",
+      "focus": "#52525B"
+    }
+  },
+  "layout": {
+    "spacing_scale": "Generous spacing. Tailwind standard with p-6 to p-8 preferred for internal container paddings.",
+    "container_padding": "p-6 sm:p-8",
+    "grid_system": "The Control Room Grid",
+    "grid_structure": "grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6",
+    "surface_styles": "Cardless look with subtle roundness max 8px (rounded-lg). Flat backgrounds, 1px subtle border, no shadow."
+  },
+  "components": {
+    "cards": {
+      "wrapper": "bg-[#121212] border border-[#27272A] rounded-lg p-6 flex flex-col h-full",
+      "hover_state": "hover:border-[#52525B] transition-colors duration-200"
+    },
+    "buttons": {
+      "primary": "bg-white text-black font-semibold rounded-md px-4 py-2 hover:bg-gray-200 transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#0A0A0A] focus:ring-white",
+      "secondary": "bg-transparent border border-[#27272A] text-white rounded-md px-4 py-2 hover:bg-[#1A1A1A] transition-colors",
+      "danger": "bg-[#EF4444] text-white font-semibold rounded-md px-4 py-2 hover:bg-[#DC2626] transition-colors",
+      "ghost": "bg-transparent text-[#A1A1AA] rounded-md px-3 py-1.5 hover:text-white hover:bg-[#1A1A1A] transition-colors"
+    },
+    "inputs": {
+      "style": "w-full bg-[#1A1A1A] border border-[#27272A] text-white rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-white focus:border-white transition-all placeholder-[#52525B]"
+    },
+    "tables": {
+      "wrapper": "w-full text-left border-collapse",
+      "header": "text-xs uppercase tracking-[0.2em] text-[#A1A1AA] border-b border-[#27272A] pb-3 font-semibold",
+      "row": "border-b border-[#27272A]/50 hover:bg-[#1A1A1A] transition-colors group",
+      "cell": "py-4 text-sm text-[#E4E4E7]"
+    },
+    "charts": {
+      "library": "recharts",
+      "style_instructions": "Use #FFFFFF for overall balance lines, #10B981 for income bars, #EF4444 for expense bars. Remove default grid lines or use very subtle #27272A dashed lines. Build custom tooltips that match the card style (bg-[#121212] border border-[#27272A] text-white)."
+    },
+    "badges": {
+      "income": "bg-[#10B981]/10 text-[#10B981] border border-[#10B981]/20 rounded-full px-2 py-0.5 text-xs font-medium",
+      "expense": "bg-[#EF4444]/10 text-[#EF4444] border border-[#EF4444]/20 rounded-full px-2 py-0.5 text-xs font-medium"
+    }
+  },
+  "motion": {
+    "hover": "transition-all duration-200 ease-in-out",
+    "enter": "animate-in fade-in slide-in-from-bottom-2 duration-500 fill-mode-both"
+  },
+  "icons_and_assets": {
+    "icon_library": "@phosphor-icons/react",
+    "install_command": "yarn add @phosphor-icons/react",
+    "icon_style": "Regular weight, sized to match adjoining text. Use duotone only for empty states or decorative backgrounds.",
+    "images": [
+      {
+        "category": "user_avatar",
+        "url": "https://images.pexels.com/photos/262391/pexels-photo-262391.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Close-up portrait of a serious businessman against dark background."
+      }
+    ]
+  },
+  "specific_instructions": [
+    "Strict .js usage: All frontend files must be written in Javascript (.jsx extension for React components). No Typescript.",
+    "Data Persistence: Use localStorage hook or context to save and load transactions, enabling persistent state across reloads.",
+    "Role-Based UI: Create a global toggle (header/nav) to switch between 'Viewer' and 'Admin'. In 'Viewer' mode, hide the 'Add Transaction', 'Edit', and 'Delete' controls entirely.",
+    "Dashboard Overview: The grid layout must allocate `col-span-1` for summary metric cards, `col-span-2` or `col-span-3` for the balance trend chart, and `col-span-1` for the spending breakdown chart.",
+    "Insights Section: Analyze the transactions array to calculate and display the highest spending category and month-over-month trend. Present these in a dedicated, prominent widget.",
+    "Transactions List: Must include search input, category filter dropdown, and sortable headers. Handle empty states gracefully with an illustrative Phosphor icon and clear prompt.",
+    "Forms & Modals: Use Shadcn UI Dialog/Modal logic, heavily customized to match the Swiss Dark Theme (sharp edges, pure dark surfaces, white focus rings).",
+    "Export Functionality: Add a simple utility to export current filtered transactions to a CSV file.",
+    "Testing: Add data-testid attributes to all interactive elements and key widgets (e.g., data-testid='transaction-item', data-testid='role-toggle')."
+  ]
+}

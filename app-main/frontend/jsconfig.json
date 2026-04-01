@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "types": []
+  },
+  "typeAcquisition": {
+    "enable": false
+  },
+  "include": ["src"]
+}
